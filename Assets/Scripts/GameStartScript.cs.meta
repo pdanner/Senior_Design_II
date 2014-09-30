@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 4364b0c9f8c46bc45b0d9c305c8728cf
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - gameStartPrefab: {instanceID: 0}
+  - threePrefab: {instanceID: 0}
+  - twoPrefab: {instanceID: 0}
+  - onePrefab: {instanceID: 0}
+  - playerPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

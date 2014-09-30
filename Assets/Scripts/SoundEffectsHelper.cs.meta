@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: b712309de931bd242acb15d9eb9f5e99
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - explosionSound: {fileID: 8300000, guid: 3bdbc687b70331146b87b7be878335e4, type: 3}
+  - playerShotSound: {fileID: 8300000, guid: 70b5879fa1e4359448a4477959d1e484, type: 3}
+  - enemyShotSound: {fileID: 8300000, guid: 323d9fb2cee62de4ba8b6c4c9689bd03, type: 3}
+  - playerReloadSound: {fileID: 8300000, guid: 70b5879fa1e4359448a4477959d1e484, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
