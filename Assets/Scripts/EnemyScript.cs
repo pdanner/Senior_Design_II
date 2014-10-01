@@ -8,6 +8,8 @@ public class EnemyScript : MonoBehaviour
 	private bool hasSpawn;
 	private MoveScript moveScript;
 	private EnemyWeaponScript[] weapons;
+
+	private bool alreadySeen = false;
 	
 	void Awake()
 	{
@@ -21,7 +23,8 @@ public class EnemyScript : MonoBehaviour
 	// 1 - Disable everything
 	void Start()
 	{
-		hasSpawn = false;
+		Spawn ();
+		/*hasSpawn = false;
 		
 		// Disable everything
 		// -- collider
@@ -32,7 +35,7 @@ public class EnemyScript : MonoBehaviour
 		foreach (EnemyWeaponScript weapon in weapons)
 		{
 			weapon.enabled = false;
-		}
+		}*/
 	}
 	
 	void Update()
@@ -60,7 +63,12 @@ public class EnemyScript : MonoBehaviour
 			// 4 - Out of the camera ? Destroy the game object.
 			if (renderer.IsVisibleFrom(Camera.main) == false)
 			{
-				Destroy(gameObject);
+				if(alreadySeen)
+					Destroy(gameObject);
+			}
+			else
+			{
+				alreadySeen = true;
 			}
 		}
 	}

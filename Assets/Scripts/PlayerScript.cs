@@ -7,10 +7,12 @@ public class PlayerScript : Photon.MonoBehaviour {
 	private float calibration = 0.7f;
 	public int ammo = 12;
 	private int frameCount = 0;
+
+	public static bool start = false;
 	// Update is called once per frame
 
 	void Update () {
-		if(frameCount > 180)
+		if(start)
 		{
 			if(this.photonView.isMine)
 			{
@@ -76,7 +78,7 @@ public class PlayerScript : Photon.MonoBehaviour {
 			}
 
 		}
-		frameCount++;
+		//frameCount++;
 	}
 	
 	void OnDestroy()

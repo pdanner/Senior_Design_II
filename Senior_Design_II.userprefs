@@ -1,18 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\WeaponScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameStartScript.cs">
     <Files>
-      <File FileName="Assets\Test_Scripts\CyNetwork.cs" Line="41" Column="1" />
-      <File FileName="Assets\Scripts\ScrollingScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Photon Unity Networking\Demos\PUNGuide_M2H\_Tutorial 1\Scripts\Connect1B.cs" Line="1" Column="1" />
-      <File FileName="Assets\Photon Unity Networking\Demos\DemoWorker\Scripts\WorkerMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Photon Unity Networking\Demos\DemoWorker\Scripts\WorkerInGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Test_Scripts\InGameScript.cs" Line="23" Column="52" />
-      <File FileName="Assets\Scripts\PlayerScript.cs" Line="74" Column="24" />
-      <File FileName="Assets\Test_Scripts\TestMenu.cs" Line="204" Column="76" />
-      <File FileName="Assets\Test_Scripts\CyNetwork.cs" Line="11" Column="25" />
-      <File FileName="Assets\Scripts\ShotScript.cs" Line="13" Column="5" />
-      <File FileName="Assets\Scripts\WeaponScript.cs" Line="33" Column="4" />
+      <File FileName="Assets\Test_Scripts\CyNetwork.cs" Line="32" Column="25" />
+      <File FileName="Assets\Test_Scripts\InGameScript.cs" Line="103" Column="32" />
+      <File FileName="Assets\Test_Scripts\TestMenu.cs" Line="197" Column="29" />
+      <File FileName="Assets\Scripts\WeaponScript.cs" Line="29" Column="41" />
+      <File FileName="Assets\Test_Scripts\SpawnEnemy.cs" Line="43" Column="65" />
+      <File FileName="Assets\Scripts\EnemyScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HealthScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MoveScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerScript.cs" Line="15" Column="11" />
+      <File FileName="Assets\Scripts\ScrollingScript.cs" Line="71" Column="26" />
+      <File FileName="Assets\Scripts\GameStartScript.cs" Line="56" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -155,6 +155,7 @@
      <Compile Include="Assets\Scripts\WinningScript.cs" />
      <Compile Include="Assets\Test_Scripts\CyNetwork.cs" />
      <Compile Include="Assets\Test_Scripts\InGameScript.cs" />
+     <Compile Include="Assets\Test_Scripts\SpawnEnemy.cs" />
      <Compile Include="Assets\Test_Scripts\TestMenu.cs" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />

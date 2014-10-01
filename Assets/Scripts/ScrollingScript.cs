@@ -33,11 +33,12 @@ public class ScrollingScript : MonoBehaviour
   private List<Transform> backgroundPart;
 
 	public int count;
+	
 
   // 3 - Get all the children
   void Start()
   {
-		count = GameStartScript.count;
+	count = GameStartScript.count;
     // For infinite background only
     if (isLooping)
     {
@@ -67,8 +68,9 @@ public class ScrollingScript : MonoBehaviour
 
   void Update()
   {
+		count = GameStartScript.count;
 				if (count < 180) {
-					count++;
+					//count++;
 				} else {
 						// Movement
 						Vector3 movement = new Vector3 (
