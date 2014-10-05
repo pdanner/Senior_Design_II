@@ -9,7 +9,6 @@ public class PlayerScript : Photon.MonoBehaviour {
 	private int frameCount = 0;
 
 	public static bool start = false;
-	// Update is called once per frame
 
 	void Update () {
 		if(start)
@@ -33,6 +32,7 @@ public class PlayerScript : Photon.MonoBehaviour {
 				shoot |= Input.GetButton ("Fire2");
 				if (shoot) {
 					WeaponScript weapon = GetComponent<WeaponScript> ();
+					//weapon.parent = PhotonNetwork.player; SCORE_MOD
 					if (Input.touchCount == 2) {
 						if (ammo != 12) {
 							ammo = 12;
@@ -86,6 +86,6 @@ public class PlayerScript : Photon.MonoBehaviour {
 		// Game Over.
 		// Add the script to the parent because the current game
 		// object is likely going to be destroyed immediately.
-		// transform.parent.gameObject.AddComponent<GameOverScript>();
+		 //transform.parent.gameObject.AddComponent<GameOverScript>();
 	}
 }

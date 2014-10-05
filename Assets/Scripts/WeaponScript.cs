@@ -8,6 +8,8 @@ public class WeaponScript : Photon.MonoBehaviour
 	public float shootingRate = 0.25f;
 
 	public float shootCooldown;
+
+	//public PhotonPlayer parent; SCORE_MOD
 	
 	void Start()
 	{
@@ -32,6 +34,7 @@ public class WeaponScript : Photon.MonoBehaviour
 		ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
 		if (shot != null)
 		{
+			//shot.parent = this.parent; SCORE_MOD
 			shot.isEnemyShot = false; //	isEnemy;
 		}
 		
@@ -47,11 +50,6 @@ public class WeaponScript : Photon.MonoBehaviour
 		{
 			shootCooldown = shootingRate;
 			this.photonView.RPC ("FireOneShot", PhotonTargets.All, null);
-			//var shotTransform = Instantiate(shotPrefab) as Transform;
-
-			//shotTransform.position = transform.position + new Vector3(4f, -0.3f, 0);
-
-			//
 		}
 	}
 

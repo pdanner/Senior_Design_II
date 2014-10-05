@@ -8,7 +8,7 @@ public class GameOverScript : MonoBehaviour {
 		const int buttonWidth = 120;
 		const int buttonHeight = 60;
 		
-		int playerScore = SpecialEffectsHelper.playerScore;
+		int playerScore = PhotonNetwork.player.GetScore ();
 		
 		if (
 			GUI.Button(
@@ -19,7 +19,7 @@ public class GameOverScript : MonoBehaviour {
 			buttonWidth,
 			buttonHeight
 			),
-			"Retry"
+			playerScore.ToString()
 			)
 			)
 		{

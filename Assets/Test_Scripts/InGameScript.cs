@@ -48,6 +48,7 @@ public class InGameScript : Photon.MonoBehaviour
 		// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
 		if(PhotonNetwork.playerName.ToLower() != "windows")
 		{
+			PhotonNetwork.player.SetScore(0);
 			if(PhotonNetwork.playerList.Length == 1/*!player1Taken*/)
 			{
 				PhotonNetwork.Instantiate(this.playerPrefab1.name, transform.position + 

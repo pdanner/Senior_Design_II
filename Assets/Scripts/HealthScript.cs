@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HealthScript : MonoBehaviour {
+public class HealthScript : Photon.MonoBehaviour {
 
 	public int hp = 2;
 
@@ -25,13 +25,40 @@ public class HealthScript : MonoBehaviour {
 		ShotScript shot = otherCollider.gameObject.GetComponent<ShotScript>();
 		if (shot != null)
 		{
-			// Avoid friendly fire
-			if (shot.isEnemyShot != isEnemy)
+			// Player Shot
+			if(shot.isEnemyShot == false)
 			{
-				Damage(shot.damage);
-				
-				// Destroy the shot
-				Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
+				// Shooting Enemy
+				if(isEnemy)
+				{
+					//shot.parent.AddScore(1); SCORE_MOD
+
+					Damage(shot.damage);
+					
+					// Destroy the shot
+					Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
+				}
 			}
+			// Enemy Shot
+			else
+			{
+				// Player got hit
+				if(!isEnemy)
+				{
+					Damage(shot.damage);
+					
+					// Destroy the shot
+					Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
+				}
+			}
+
+			// Avoid friendly fire
+//			if (shot.isEnemyShot != isEnemy)
+//			{
+//				Damage(shot.damage);
+//				
+//				// Destroy the shot
+//				Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
+//			}
 }
 	}}

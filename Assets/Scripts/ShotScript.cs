@@ -8,9 +8,11 @@ public class ShotScript : Photon.MonoBehaviour {
 
 	public bool isEnemyShot = false;
 
+	//public PhotonPlayer parent; SCORE_MOD
+
 	// Use this for initialization
 	void Start () {
-		//PhotonNetwork.Instantiate("Shot", transform.position, Quaternion.identity, 0);
+
 	}
 
 	void Update()
