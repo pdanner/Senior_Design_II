@@ -20,6 +20,8 @@ public class InGameScript : Photon.MonoBehaviour
 
 	private int[] playerPrefabList = new int[4];
 
+	public AudioSource song;
+
 	[RPC] void updatePlayerAvailable(int playerTaken)
 	{
 		//Debug.Log (playerTaken);
@@ -95,6 +97,8 @@ public class InGameScript : Photon.MonoBehaviour
 			if(GUILayout.Button ("Start Game"))
 			{
 				this.photonView.RPC ("startGame", PhotonTargets.All, null);
+				song.loop = true;
+				song.Play();
 			}
 		}
 	}

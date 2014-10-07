@@ -15,7 +15,7 @@ public class HealthScript : Photon.MonoBehaviour {
 		{
 			SpecialEffectsHelper.Instance.Explosion(transform.position);
 			SoundEffectsHelper.Instance.MakeExplosionSound();
-			Destroy(gameObject);
+			PhotonNetwork.Destroy(gameObject);
 		}
 	}
 	
@@ -36,7 +36,7 @@ public class HealthScript : Photon.MonoBehaviour {
 					Damage(shot.damage);
 					
 					// Destroy the shot
-					Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
+					PhotonNetwork.Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
 				}
 			}
 			// Enemy Shot
@@ -48,7 +48,7 @@ public class HealthScript : Photon.MonoBehaviour {
 					Damage(shot.damage);
 					
 					// Destroy the shot
-					Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
+					PhotonNetwork.Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
 				}
 			}
 
