@@ -18,6 +18,8 @@ public class InGameScript : Photon.MonoBehaviour
 	private bool player3Taken = false;
 	private bool player4Taken = false;
 
+	private bool showStartGame = true;
+
 	private int[] playerPrefabList = new int[4];
 
 	public AudioSource song;
@@ -88,19 +90,25 @@ public class InGameScript : Photon.MonoBehaviour
 	
 	public void OnGUI()
 	{
+		//GUI.Box(new Rect(0, Screen.height-25, 150, 25), "");
+		GUILayout.BeginArea(new Rect(0, Screen.height-25, 300, 25));
+		GUILayout.BeginHorizontal ();
 		if (GUILayout.Button("Return to Lobby"))
 		{
 			PhotonNetwork.LeaveRoom();  // we will load the menu level when we successfully left the room
 		}
-		if(PhotonNetwork.player.name.ToLower() == "windows")
+		if(showStartGame && PhotonNetwork.player.name.ToLower() == "windows")
 		{
 			if(GUILayout.Button ("Start Game"))
 			{
+				showStartGame = false;
 				this.photonView.RPC ("startGame", PhotonTargets.All, null);
 				song.loop = true;
 				song.Play();
 			}
 		}
+		GUILayout.EndHorizontal ();
+		GUILayout.EndArea ();
 	}
 
 	[RPC] void startGame()
@@ -111,25 +119,6 @@ public class InGameScript : Photon.MonoBehaviour
 	public void OnMasterClientSwitched(PhotonPlayer player)
 	{
 		Debug.Log("OnMasterClientSwitched: " + player);
-		
-		string message;
-		InRoomChat chatComponent = GetComponent<InRoomChat>();  // if we find a InRoomChat component, we print out a short message
-		
-		if (chatComponent != null)
-		{
-			// to check if this client is the new master...
-			if (player.isLocal)
-			{
-				message = "You are Master Client now.";
-			}
-			else
-			{
-				message = player.name + " is Master Client now.";
-			}
-			
-			
-			chatComponent.AddLine(message); // the Chat method is a RPC. as we don't want to send an RPC and neither create a PhotonMessageInfo, lets call AddLine()
-		}
 	}
 	
 	public void OnLeftRoom()
@@ -158,7 +147,6 @@ public class InGameScript : Photon.MonoBehaviour
 				break;
 			}
 		}
-		Debug.Log (PhotonNetwork.playerList.Length);
 		if(PhotonNetwork.playerList.Length == 1)
 		{
 			GameStartScript.count = 0;
