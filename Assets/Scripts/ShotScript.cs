@@ -8,7 +8,7 @@ public class ShotScript : Photon.MonoBehaviour {
 
 	public bool isEnemyShot = false;
 
-	//public PhotonPlayer parent; SCORE_MOD
+	public PhotonPlayer parent; //SCORE_MOD
 
 	// Use this for initialization
 	void Start () {

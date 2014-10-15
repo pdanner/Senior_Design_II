@@ -49,13 +49,15 @@ public class SpawnEnemy : Photon.MonoBehaviour {
 				float spawnY = Random.Range (bottomBorder, topBorder);
 				float spawnX = rightBorder - 5f;
 
-				this.photonView.RPC ("Spawn", PhotonTargets.All, spawnX, spawnY);
+				//this.photonView.RPC ("Spawn", PhotonTargets.All, spawnX, spawnY);
+				GameObject enemyTransform = PhotonNetwork.Instantiate (enemyPrefab.name, new Vector3(spawnX, spawnY, 0f), 
+				                                                       transform.rotation, 0) as GameObject;
 			}
 		}
 	}
-	[RPC] void Spawn(float x, float y)
-	{
-		GameObject enemyTransform = Instantiate (Resources.Load("enemy"), new Vector3(x, y, 0f), 
-		                                        transform.rotation) as GameObject;
-	}
+//	[RPC] void Spawn(float x, float y)
+//	{
+//		GameObject enemyTransform = PhotonNetwork.Instantiate (enemyPrefab.name, new Vector3(x, y, 0f), 
+//		                                        transform.rotation, 0) as GameObject;
+//	}
 }

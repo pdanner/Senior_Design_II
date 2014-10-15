@@ -154,6 +154,7 @@
      <Compile Include="Assets\Scripts\WeaponScript.cs" />
      <Compile Include="Assets\Scripts\WinningScript.cs" />
      <Compile Include="Assets\Test_Scripts\CyNetwork.cs" />
+     <Compile Include="Assets\Test_Scripts\EnemyNetwork.cs" />
      <Compile Include="Assets\Test_Scripts\InGameScript.cs" />
      <Compile Include="Assets\Test_Scripts\SpawnEnemy.cs" />
      <Compile Include="Assets\Test_Scripts\TestMenu.cs" />

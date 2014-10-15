@@ -3,7 +3,7 @@
 /// <summary>
 /// Enemy generic behavior
 /// </summary>
-public class EnemyScript : MonoBehaviour
+public class EnemyScript : Photon.MonoBehaviour
 {
 	private bool hasSpawn;
 	private MoveScript moveScript;
@@ -63,8 +63,8 @@ public class EnemyScript : MonoBehaviour
 			// 4 - Out of the camera ? Destroy the game object.
 			if (renderer.IsVisibleFrom(Camera.main) == false)
 			{
-				if(alreadySeen)
-					Destroy(gameObject);
+				if(alreadySeen && PhotonNetwork.player.name.ToLower() == "windows")
+					PhotonNetwork.Destroy(gameObject);
 			}
 			else
 			{

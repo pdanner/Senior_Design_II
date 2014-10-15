@@ -32,7 +32,7 @@ public class PlayerScript : Photon.MonoBehaviour {
 				shoot |= Input.GetButton ("Fire2");
 				if (shoot) {
 					WeaponScript weapon = GetComponent<WeaponScript> ();
-					//weapon.parent = PhotonNetwork.player; SCORE_MOD
+					weapon.parent = PhotonNetwork.player; //SCORE_MOD
 					if (Input.touchCount == 2) {
 						if (ammo != 12) {
 							ammo = 12;

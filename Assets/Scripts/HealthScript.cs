@@ -13,9 +13,31 @@ public class HealthScript : Photon.MonoBehaviour {
 		
 		if (hp <= 0)
 		{
+			photonView.RPC ("destroyObject", PhotonTargets.All, null);
+		}
+	}
+
+	[RPC] void destroyObject()
+	{
+		if(!gameObject.name.Contains("enemy") && !gameObject.name.Contains ("boss"))
+		{
+			//Player
 			SpecialEffectsHelper.Instance.Explosion(transform.position);
 			SoundEffectsHelper.Instance.MakeExplosionSound();
-			Destroy(gameObject);
+			//Each player will PhotonNetwork.Destroy their own GO
+			if(this.photonView.isMine)
+			{
+				PhotonNetwork.Destroy(gameObject);
+			}
+		}
+		else
+		{
+			//Enemy or Boss
+			SpecialEffectsHelper.Instance.Explosion(transform.position);
+			SoundEffectsHelper.Instance.MakeExplosionSound();
+			//Windows spawned the Enemies, so they have to destroy them
+			if(PhotonNetwork.player.name.ToLower() == "windows")	
+				PhotonNetwork.Destroy(gameObject);
 		}
 	}
 	
@@ -31,10 +53,11 @@ public class HealthScript : Photon.MonoBehaviour {
 				// Shooting Enemy
 				if(isEnemy)
 				{
-					//shot.parent.AddScore(1); SCORE_MOD
 
+					//Debug.Log(shot.parent.name);
 					Damage(shot.damage);
-					
+
+					shot.parent.AddScore(1); //SCORE_MOD
 					// Destroy the shot
 					Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
 				}

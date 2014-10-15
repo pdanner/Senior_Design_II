@@ -9,7 +9,7 @@ public class WeaponScript : Photon.MonoBehaviour
 
 	public float shootCooldown;
 
-	//public PhotonPlayer parent; SCORE_MOD
+	public PhotonPlayer parent; //SCORE_MOD
 	
 	void Start()
 	{
@@ -34,7 +34,7 @@ public class WeaponScript : Photon.MonoBehaviour
 		ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
 		if (shot != null)
 		{
-			//shot.parent = this.parent; SCORE_MOD
+			shot.parent = this.parent; //SCORE_MOD
 			shot.isEnemyShot = false; //	isEnemy;
 		}
 		

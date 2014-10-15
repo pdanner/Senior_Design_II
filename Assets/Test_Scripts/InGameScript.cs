@@ -97,6 +97,9 @@ public class InGameScript : Photon.MonoBehaviour
 		{
 			PhotonNetwork.LeaveRoom();  // we will load the menu level when we successfully left the room
 		}
+		GUILayout.EndHorizontal ();
+		GUILayout.EndArea ();
+		GUILayout.BeginArea (new Rect ((Screen.width / 2)-150, (Screen.height / 2), 300, 150));
 		if(showStartGame && PhotonNetwork.player.name.ToLower() == "windows")
 		{
 			if(GUILayout.Button ("Start Game"))
@@ -107,7 +110,6 @@ public class InGameScript : Photon.MonoBehaviour
 				song.Play();
 			}
 		}
-		GUILayout.EndHorizontal ();
 		GUILayout.EndArea ();
 	}
 
