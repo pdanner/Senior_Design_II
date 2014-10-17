@@ -61,7 +61,7 @@ public class InGameScript : Photon.MonoBehaviour
 				this.photonView.RPC ("updatePlayerAvailable", PhotonTargets.All, 1);
 				playerPrefabList[0] = PhotonNetwork.player.ID;
 			}
-			else if(PhotonNetwork.playerList.Length == 3/*!player2Taken*/)
+			else if(PhotonNetwork.playerList.Length == 2/*!player2Taken*/)
 			{
 				PhotonNetwork.Instantiate(this.playerPrefab2.name, transform.position + 
 				                          new Vector3(Random.Range(-5,5), Random.Range(-5,5), 0f), Quaternion.identity, 0);
@@ -69,7 +69,7 @@ public class InGameScript : Photon.MonoBehaviour
 				this.photonView.RPC ("updatePlayerAvailable", PhotonTargets.All, 2);
 				playerPrefabList[1] = PhotonNetwork.player.ID;
 			}
-			else if(PhotonNetwork.playerList.Length == 4/*!player3Taken*/)
+			else if(PhotonNetwork.playerList.Length == 3/*!player3Taken*/)
 			{
 				PhotonNetwork.Instantiate(this.playerPrefab3.name, transform.position + 
 				                          new Vector3(Random.Range(-5,5), Random.Range(-5,5), 0f), Quaternion.identity, 0);
@@ -77,7 +77,7 @@ public class InGameScript : Photon.MonoBehaviour
 				this.photonView.RPC ("updatePlayerAvailable", PhotonTargets.All, 3);
 				playerPrefabList[2] = PhotonNetwork.player.ID;
 			}
-			else if(PhotonNetwork.playerList.Length == 5/*!player4Taken*/)
+			else if(PhotonNetwork.playerList.Length == 4/*!player4Taken*/)
 			{
 				PhotonNetwork.Instantiate(this.playerPrefab4.name, transform.position + 
 				                          new Vector3(Random.Range(-5,5), Random.Range(-5,5), 0f), Quaternion.identity, 0);

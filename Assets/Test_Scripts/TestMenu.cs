@@ -19,6 +19,8 @@ public class TestMenu : MonoBehaviour
 	public static readonly string SceneNameMenu = "Menu";
 	
 	public static readonly string SceneNameGame = "Battleground";
+
+	private GUISkin skin;
 	
 	private string errorDialog;
 	private double timeToClearDialog;
@@ -40,6 +42,8 @@ public class TestMenu : MonoBehaviour
 	
 	public void Awake()
 	{
+
+		skin = Resources.Load ("GUISkin") as GUISkin;
 		// this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
 		PhotonNetwork.automaticallySyncScene = true;
 		
@@ -62,6 +66,8 @@ public class TestMenu : MonoBehaviour
 	
 	public void OnGUI()
 	{
+		GUI.skin = skin;
+		GameStartScript.start = false;
 		if (!PhotonNetwork.connected)
 		{
 			if (PhotonNetwork.connecting)
@@ -88,107 +94,123 @@ public class TestMenu : MonoBehaviour
 			
 			return;
 		}
-		
-		
-		//GUI.skin.box.fontStyle = FontStyle.Bold;
-		//GUI.Box(new Rect((Screen.width) / 2, (Screen.height - 100) / 2, 400, 300), "Join or Create a Room");
-		GUILayout.BeginArea(new Rect((Screen.width) / 2, (Screen.height - 100) / 2, 400, 300));
-		
-		GUILayout.Space(25);
-		
-		// Player name
-		GUILayout.BeginHorizontal();
-		GUILayout.Label("Player name:", GUILayout.Width(100));
-		PhotonNetwork.playerName = GUILayout.TextField(PhotonNetwork.playerName);
-		GUILayout.Space(105);
-		if (GUI.changed)
+		if (GUI.Button(	new Rect(2*(Screen.width / 3) - (100), (Screen.height * 2/5), 250,125), "Start"))
 		{
-			// Save name
-			PlayerPrefs.SetString("playerName", PhotonNetwork.playerName);
-		}
-		GUILayout.EndHorizontal();
-		
-		GUILayout.Space(15);
-		
-		// Join room by title
-		GUILayout.BeginHorizontal();
-		GUILayout.Label("Roomname:", GUILayout.Width(100));
-		this.roomName = GUILayout.TextField(this.roomName);
-		
-		if (GUILayout.Button("Create Room", GUILayout.Width(100)))
-		{
+			// Create Room
+			PhotonNetwork.playerName = "Guest" + Random.Range(1, 9999);
 			PhotonNetwork.CreateRoom(this.roomName, new RoomOptions() { maxPlayers = 10 }, null);
 		}
-		
-		GUILayout.EndHorizontal();
-		
-		// Create a room (fails if exist!)
-		GUILayout.BeginHorizontal();
-		GUILayout.FlexibleSpace();
-		//this.roomName = GUILayout.TextField(this.roomName);
-		if (GUILayout.Button("Join Room", GUILayout.Width(100)))
+		if (GUI.Button(	new Rect(2*(Screen.width / 3) - (100), (Screen.height * 3/5), 250,125), "Join"))
 		{
+			// Join Room
+			PhotonNetwork.playerName = "Guest" + Random.Range(1, 9999);
 			PhotonNetwork.JoinRoom(this.roomName);
 		}
-		
-		GUILayout.EndHorizontal();
-		
-		
-		if (!string.IsNullOrEmpty(this.ErrorDialog))
+		if (GUI.Button(	new Rect(2*(Screen.width / 3) - (100), (Screen.height * 4/5), 250,125), "High \nScores"))
 		{
-			GUILayout.Label(this.ErrorDialog);
-			
-			if (timeToClearDialog < Time.time)
-			{
-				timeToClearDialog = 0;
-				this.ErrorDialog = "";
-			}
+			// Scores
+			PhotonNetwork.playerName = "windows";
+			PhotonNetwork.CreateRoom(this.roomName, new RoomOptions() { maxPlayers = 10 }, null);
 		}
-		
-		GUILayout.Space(15);
-		
-		// Join random room
-		GUILayout.BeginHorizontal();
-		
-		GUILayout.Label(PhotonNetwork.countOfPlayers + " users are online in " + PhotonNetwork.countOfRooms + " rooms.");
-		GUILayout.FlexibleSpace();
-		if (GUILayout.Button("Join Random", GUILayout.Width(100)))
-		{
-			PhotonNetwork.JoinRandomRoom();
-		}
-		
-		
-		GUILayout.EndHorizontal();
-		
-		GUILayout.Space(15);
-		if (PhotonNetwork.GetRoomList().Length == 0)
-		{
-			GUILayout.Label("Currently no games are available.");
-			GUILayout.Label("Rooms will be listed here, when they become available.");
-		}
-		else
-		{
-			GUILayout.Label(PhotonNetwork.GetRoomList() + " currently available. Join either:");
-			
-			// Room listing: simply call GetRoomList: no need to fetch/poll whatever!
-			this.scrollPos = GUILayout.BeginScrollView(this.scrollPos);
-			foreach (RoomInfo roomInfo in PhotonNetwork.GetRoomList())
-			{
-				GUILayout.BeginHorizontal();
-				GUILayout.Label(roomInfo.name + " " + roomInfo.playerCount + "/" + roomInfo.maxPlayers);
-				if (GUILayout.Button("Join"))
-				{
-					PhotonNetwork.JoinRoom(roomInfo.name);
-					PhotonNetwork.automaticallySyncScene = true;
-				}
-				
-				GUILayout.EndHorizontal();
-			}
-			
-			GUILayout.EndScrollView();
-		}
-		
-		GUILayout.EndArea();
+		//GUI.skin.box.fontStyle = FontStyle.Bold;
+		//GUI.Box(new Rect((Screen.width) / 2, (Screen.height - 100) / 2, 400, 300), "Join or Create a Room");
+//		GUILayout.BeginArea(new Rect((Screen.width) / 2, (Screen.height - 100) / 2, 400, 300));
+//		
+//		GUILayout.Space(25);
+//		
+//		// Player name
+//		GUILayout.BeginHorizontal();
+//		GUILayout.Label("Player name:", GUILayout.Width(100));
+//		PhotonNetwork.playerName = GUILayout.TextField(PhotonNetwork.playerName);
+//		GUILayout.Space(105);
+//		if (GUI.changed)
+//		{
+//			// Save name
+//			PlayerPrefs.SetString("playerName", PhotonNetwork.playerName);
+//		}
+//		GUILayout.EndHorizontal();
+//		
+//		GUILayout.Space(15);
+//		
+//		// Join room by title
+//		GUILayout.BeginHorizontal();
+//		GUILayout.Label("Roomname:", GUILayout.Width(100));
+//		this.roomName = GUILayout.TextField(this.roomName);
+//		
+//		if (GUILayout.Button("Create Room", GUILayout.Width(100)))
+//		{
+//			PhotonNetwork.CreateRoom(this.roomName, new RoomOptions() { maxPlayers = 10 }, null);
+//		}
+//		
+//		GUILayout.EndHorizontal();
+//		
+//		// Create a room (fails if exist!)
+//		GUILayout.BeginHorizontal();
+//		GUILayout.FlexibleSpace();
+//		//this.roomName = GUILayout.TextField(this.roomName);
+//		if (GUILayout.Button("Join Room", GUILayout.Width(100)))
+//		{
+//			PhotonNetwork.JoinRoom(this.roomName);
+//		}
+//		
+//		GUILayout.EndHorizontal();
+//		
+//		
+//		if (!string.IsNullOrEmpty(this.ErrorDialog))
+//		{
+//			GUILayout.Label(this.ErrorDialog);
+//			
+//			if (timeToClearDialog < Time.time)
+//			{
+//				timeToClearDialog = 0;
+//				this.ErrorDialog = "";
+//			}
+//		}
+//		
+//		GUILayout.Space(15);
+//		
+//		// Join random room
+//		GUILayout.BeginHorizontal();
+//		
+//		GUILayout.Label(PhotonNetwork.countOfPlayers + " users are online in " + PhotonNetwork.countOfRooms + " rooms.");
+//		GUILayout.FlexibleSpace();
+//		if (GUILayout.Button("Join Random", GUILayout.Width(100)))
+//		{
+//			PhotonNetwork.JoinRandomRoom();
+//		}
+//		
+//		
+//		GUILayout.EndHorizontal();
+//		
+//		GUILayout.Space(15);
+//		if (PhotonNetwork.GetRoomList().Length == 0)
+//		{
+//			GUILayout.Label("Currently no games are available.");
+//			GUILayout.Label("Rooms will be listed here, when they become available.");
+//		}
+//		else
+//		{
+//			GUILayout.Label(PhotonNetwork.GetRoomList() + " currently available. Join either:");
+//			
+//			// Room listing: simply call GetRoomList: no need to fetch/poll whatever!
+//			this.scrollPos = GUILayout.BeginScrollView(this.scrollPos);
+//			foreach (RoomInfo roomInfo in PhotonNetwork.GetRoomList())
+//			{
+//				GUILayout.BeginHorizontal();
+//				GUILayout.Label(roomInfo.name + " " + roomInfo.playerCount + "/" + roomInfo.maxPlayers);
+//				if (GUILayout.Button("Join"))
+//				{
+//					PhotonNetwork.JoinRoom(roomInfo.name);
+//					PhotonNetwork.automaticallySyncScene = true;
+//				}
+//				
+//				GUILayout.EndHorizontal();
+//			}
+//			
+//			GUILayout.EndScrollView();
+//		}
+//		
+//		GUILayout.EndArea();
 	}
 	
 	// We have two options here: we either joined(by title, list or random) or created a room.

@@ -15,275 +15,65 @@ Platform assembly: C:\Users\Owner\Documents\GitHub\Senior_Design_II\cyris_Data\M
 Loading C:\Users\Owner\Documents\GitHub\Senior_Design_II\cyris_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
 Platform assembly: C:\Users\Owner\Documents\GitHub\Senior_Design_II\cyris_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Owner\Documents\GitHub\Senior_Design_II\cyris_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.105 seconds
+- Completed reload, in  0.099 seconds
 desktop: 1366x768 59Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Owner\Documents\GitHub\Senior_Design_II\cyris_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Owner\Documents\GitHub\Senior_Design_II\cyris_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 0.431602 ms
+OnCreatedRoom
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+UnloadTime: 1.001784 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 380.
-Total: 2.456334 ms (FindLiveObjects: 0.042823 ms CreateObjectMapping: 0.040898 ms MarkObjects: 0.829042 ms  DeleteObjects: 0.023095 ms)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 378.
+Total: 1.569558 ms (FindLiveObjects: 0.037049 ms CreateObjectMapping: 0.029832 ms MarkObjects: 0.530724 ms  DeleteObjects: 0.031756 ms)
 
-OnPlayerDisconneced: 'Guest811'
+OnPhotonPlayerConnected: 'Guest5243'
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-OnPlayerDisconneced: 'Trevor'
+NullReferenceException: Object reference not set to an instance of an object
+  at ScoreExtensions.GetScore (.PhotonPlayer player) [0x00000] in <filename unknown>:0 
+  at ScoreExtensions.AddScore (.PhotonPlayer player, Int32 scoreToAddToCurrent) [0x00000] in <filename unknown>:0 
+  at HealthScript.OnTriggerEnter2D (UnityEngine.Collider2D otherCollider) [0x00000] in <filename unknown>:0 
  
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-OnMasterClientSwitched: 'windows'(master)
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-OnPlayerDisconneced: 'Guest4155'
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-OnPhotonPlayerConnected: 'Guest811'
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-OnPhotonPlayerConnected: 'Trevor'
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-OnPhotonPlayerConnected: 'Guest4155'
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-OnDestroy for PhotonView View (0)11001 on CY3(Clone)  but GO is still in instantiatedObjects. instantiationId: 11001. Use PhotonNetwork.Destroy().  Identical with this: True PN.Destroyed called for this PV: True
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-OnDestroy for PhotonView View (0)12001 on CY4(Clone)  but GO is still in instantiatedObjects. instantiationId: 12001. Use PhotonNetwork.Destroy().  Identical with this: True PN.Destroyed called for this PV: True
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received RPC "FireOneShot" for viewID 12001 but this PhotonView does not exist! Was remote PV. Owner called.
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received RPC "FireOneShot" for viewID 12001 but this PhotonView does not exist! Was remote PV. Owner called.
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received RPC "FireOneShot" for viewID 12001 but this PhotonView does not exist! Was remote PV. Owner called.
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received RPC "FireOneShot" for viewID 12001 but this PhotonView does not exist! Was remote PV. Owner called.
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received RPC "FireOneShot" for viewID 12001 but this PhotonView does not exist! Was remote PV. Owner called.
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received RPC "FireOneShot" for viewID 12001 but this PhotonView does not exist! Was remote PV. Owner called.
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received RPC "FireOneShot" for viewID 12001 but this PhotonView does not exist! Was remote PV. Owner called.
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received RPC "FireOneShot" for viewID 12001 but this PhotonView does not exist! Was remote PV. Owner called.
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+(Filename:  Line: -1)
 
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+Received RPC "destroyObject" for viewID 1002 but this PhotonView does not exist! View was/is ours. Remote called.
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+Received RPC "destroyObject" for viewID 1002 but this PhotonView does not exist! View was/is ours. Remote called.
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-Received OnSerialization for view ID 12001. We have no such PhotonView! Ignored this if you're leaving a room. State: Joined
+OnPlayerDisconneced: 'Guest5243'
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-OnPlayerDisconneced: 'Guest811'
+OnPhotonPlayerConnected: 'Guest8746'
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-Failed to 'network-remove' GameObject because it's null.
+NullReferenceException: Object reference not set to an instance of an object
+  at ScoreExtensions.GetScore (.PhotonPlayer player) [0x00000] in <filename unknown>:0 
+  at ScoreExtensions.AddScore (.PhotonPlayer player, Int32 scoreToAddToCurrent) [0x00000] in <filename unknown>:0 
+  at HealthScript.OnTriggerEnter2D (UnityEngine.Collider2D otherCollider) [0x00000] in <filename unknown>:0 
  
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+(Filename:  Line: -1)
 
-OnPlayerDisconneced: 'Guest4155'
+Received RPC "destroyObject" for viewID 1008 but this PhotonView does not exist! View was/is ours. Remote called.
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-Failed to 'network-remove' GameObject because it's null.
+Received RPC "destroyObject" for viewID 1008 but this PhotonView does not exist! View was/is ours. Remote called.
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-Failed to 'network-remove' GameObject because it's null.
+OnPlayerDisconneced: 'Guest8746'
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
@@ -291,19 +81,38 @@ OnLeftRoom (local)
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-UnloadTime: 7.248712 ms
+UnloadTime: 0.527356 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 289.
-Total: 2.554972 ms (FindLiveObjects: 0.024539 ms CreateObjectMapping: 0.095270 ms MarkObjects: 0.561035 ms  DeleteObjects: 0.860318 ms)
+Unloading 48 unused Assets to reduce memory usage. Loaded Objects now: 312.
+Total: 7.735682 ms (FindLiveObjects: 0.022614 ms CreateObjectMapping: 0.026945 ms MarkObjects: 0.509553 ms  DeleteObjects: 6.162274 ms)
 
-UnloadTime: 0.632728 ms
+OnCreatedRoom
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+UnloadTime: 0.357024 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 379.
-Total: 1.942934 ms (FindLiveObjects: 0.030794 ms CreateObjectMapping: 0.027426 ms MarkObjects: 0.639464 ms  DeleteObjects: 0.012029 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 378.
+Total: 1.021031 ms (FindLiveObjects: 0.018765 ms CreateObjectMapping: 0.019727 ms MarkObjects: 0.428717 ms  DeleteObjects: 0.018284 ms)
 
-OnPhotonPlayerConnected: 'Guest811'
+OnPhotonPlayerConnected: 'Guest6302'
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ScoreExtensions.GetScore (.PhotonPlayer player) [0x00000] in <filename unknown>:0 
+  at ScoreExtensions.AddScore (.PhotonPlayer player, Int32 scoreToAddToCurrent) [0x00000] in <filename unknown>:0 
+  at HealthScript.OnTriggerEnter2D (UnityEngine.Collider2D otherCollider) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Received RPC "destroyObject" for viewID 1004 but this PhotonView does not exist! View was/is ours. Remote called.
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+OnPlayerDisconneced: 'Guest6302'
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
@@ -311,41 +120,11 @@ OnLeftRoom (local)
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-UnloadTime: 1.432901 ms
+UnloadTime: 0.581246 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 47 unused Assets to reduce memory usage. Loaded Objects now: 289.
-Total: 5.639224 ms (FindLiveObjects: 0.019246 ms CreateObjectMapping: 0.026463 ms MarkObjects: 0.770822 ms  DeleteObjects: 3.970071 ms)
-
-HandleD3DDeviceLost
-  HandleD3DDeviceLost: still lost
-Skipped rendering frame because GfxDevice is in invalid state (device lost)
- 
-(Filename:  Line: 1539)
-
-HandleD3DDeviceLost
-  HandleD3DDeviceLost: still lost
-Skipped frame because GfxDevice is in invalid state (device lost)
- 
-(Filename:  Line: 1650)
-
-HandleD3DDeviceLost
-  HandleD3DDeviceLost: still lost
-Skipped frame because GfxDevice is in invalid state (device lost)
- 
-(Filename:  Line: 1650)
-
-HandleD3DDeviceLost
-  HandleD3DDeviceLost: still lost
-Skipped frame because GfxDevice is in invalid state (device lost)
- 
-(Filename:  Line: 1650)
-
-HandleD3DDeviceLost
-  HandleD3DDeviceLost: still lost
-Skipped frame because GfxDevice is in invalid state (device lost)
- 
-(Filename:  Line: 1650)
+Unloading 48 unused Assets to reduce memory usage. Loaded Objects now: 312.
+Total: 3.099181 ms (FindLiveObjects: 0.025020 ms CreateObjectMapping: 0.030313 ms MarkObjects: 0.536498 ms  DeleteObjects: 1.272199 ms)
 
 HandleD3DDeviceLost
   HandleD3DDeviceLost: still lost
