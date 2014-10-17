@@ -17,7 +17,7 @@ public class ShotScript : Photon.MonoBehaviour {
 
 	void Update()
 	{
-		if (++count == 200)
+		if (++count == 100)
 		{
 			Destroy (gameObject);
 			//PhotonNetwork.Destroy (gameObject);

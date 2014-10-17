@@ -53,7 +53,6 @@ public class HealthScript : Photon.MonoBehaviour {
 				// Shooting Enemy
 				if(isEnemy)
 				{
-
 					//Debug.Log(shot.parent.name);
 					Damage(shot.damage);
 

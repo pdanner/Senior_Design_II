@@ -46,7 +46,7 @@ public class SpawnEnemy : Photon.MonoBehaviour {
 				spawn = 0;
 			if(spawn == 1)
 			{
-				float spawnY = Random.Range (bottomBorder, topBorder);
+				float spawnY = Random.Range (bottomBorder-5f, topBorder+5f);
 				float spawnX = rightBorder - 5f;
 
 				//this.photonView.RPC ("Spawn", PhotonTargets.All, spawnX, spawnY);

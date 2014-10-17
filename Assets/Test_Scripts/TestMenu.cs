@@ -90,9 +90,9 @@ public class TestMenu : MonoBehaviour
 		}
 		
 		
-		GUI.skin.box.fontStyle = FontStyle.Bold;
-		GUI.Box(new Rect((Screen.width - 400) / 2, (Screen.height - 350) / 2, 400, 300), "Join or Create a Room");
-		GUILayout.BeginArea(new Rect((Screen.width - 400) / 2, (Screen.height - 350) / 2, 400, 300));
+		//GUI.skin.box.fontStyle = FontStyle.Bold;
+		//GUI.Box(new Rect((Screen.width) / 2, (Screen.height - 100) / 2, 400, 300), "Join or Create a Room");
+		GUILayout.BeginArea(new Rect((Screen.width) / 2, (Screen.height - 100) / 2, 400, 300));
 		
 		GUILayout.Space(25);
 		
