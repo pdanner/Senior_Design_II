@@ -56,7 +56,7 @@ public class InGameScript : Photon.MonoBehaviour
 			if(PhotonNetwork.playerList.Length == 1/*!player1Taken*/)
 			{
 				PhotonNetwork.Instantiate(this.playerPrefab1.name,  
-				                         new Vector3(-5f, 5f, 0f), Quaternion.identity, 0);
+				                         new Vector3(-10f, 5f, 0f), Quaternion.identity, 0);
 				player1Taken = true;
 				this.photonView.RPC ("updatePlayerAvailable", PhotonTargets.All, 1);
 				playerPrefabList[0] = PhotonNetwork.player.ID;
@@ -64,7 +64,7 @@ public class InGameScript : Photon.MonoBehaviour
 			else if(PhotonNetwork.playerList.Length == 2/*!player2Taken*/)
 			{
 				PhotonNetwork.Instantiate(this.playerPrefab2.name, transform.position + 
-				                          new Vector3(Random.Range(-5,5), Random.Range(-5,5), 0f), Quaternion.identity, 0);
+				                          new Vector3(-10f, 2f, 0f), Quaternion.identity, 0);
 				player2Taken = true;
 				this.photonView.RPC ("updatePlayerAvailable", PhotonTargets.All, 2);
 				playerPrefabList[1] = PhotonNetwork.player.ID;
@@ -72,7 +72,7 @@ public class InGameScript : Photon.MonoBehaviour
 			else if(PhotonNetwork.playerList.Length == 3/*!player3Taken*/)
 			{
 				PhotonNetwork.Instantiate(this.playerPrefab3.name, transform.position + 
-				                          new Vector3(Random.Range(-5,5), Random.Range(-5,5), 0f), Quaternion.identity, 0);
+				                          new Vector3(-10f, -2f, 0f), Quaternion.identity, 0);
 				player3Taken = true;
 				this.photonView.RPC ("updatePlayerAvailable", PhotonTargets.All, 3);
 				playerPrefabList[2] = PhotonNetwork.player.ID;
@@ -80,7 +80,7 @@ public class InGameScript : Photon.MonoBehaviour
 			else if(PhotonNetwork.playerList.Length == 4/*!player4Taken*/)
 			{
 				PhotonNetwork.Instantiate(this.playerPrefab4.name, transform.position + 
-				                          new Vector3(Random.Range(-5,5), Random.Range(-5,5), 0f), Quaternion.identity, 0);
+				                          new Vector3(-10f, -5f, 0f), Quaternion.identity, 0);
 				player4Taken = true;
 				this.photonView.RPC ("updatePlayerAvailable", PhotonTargets.All, 4);
 				playerPrefabList[3] = PhotonNetwork.player.ID;

@@ -46,8 +46,8 @@ public class SpawnEnemy : Photon.MonoBehaviour {
 				spawn = 0;
 			if(spawn == 1)
 			{
-				float spawnY = Random.Range (bottomBorder-5f, topBorder+5f);
-				float spawnX = rightBorder - 5f;
+				float spawnY = Random.Range (bottomBorder-1f, topBorder+1f);
+				float spawnX = rightBorder + 5f;
 
 				//this.photonView.RPC ("Spawn", PhotonTargets.All, spawnX, spawnY);
 				GameObject enemyTransform = PhotonNetwork.Instantiate (enemyPrefab.name, new Vector3(spawnX, spawnY, 0f), 
