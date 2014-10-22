@@ -2,7 +2,9 @@ fileFormatVersion: 2
 guid: dc3ab18274ed67748b47d05fe3042ec7
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - shield_powerup: {fileID: 400000, guid: be5ebaa7c394429498078a536d33c4cf, type: 2}
+  - speed_powerup: {fileID: 400000, guid: 12eb71f048675cb4688970acd747135e, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

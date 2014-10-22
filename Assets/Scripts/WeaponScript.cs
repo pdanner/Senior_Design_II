@@ -28,7 +28,7 @@ public class WeaponScript : Photon.MonoBehaviour
 	[RPC]
 	void FireOneShot()
 	{
-		GameObject shotTransform = Instantiate (Resources.Load("Shot"), transform.position + new Vector3(2f, -0.3f, 0), 
+		GameObject shotTransform = Instantiate (Resources.Load("Shot"), transform.position + new Vector3(3f, -0.3f, 0), 
 		                                        transform.rotation) as GameObject;
 		//shotTransform.position = transform.position + new Vector3(4f, -0.3f, 0);
 		ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();

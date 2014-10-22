@@ -131,6 +131,7 @@
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\SupportLogger.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TestDontDestroyOnLoad.cs" />
      <Compile Include="Assets\Photon Unity Networking\UtilityScripts\TimeKeeper.cs" />
+     <Compile Include="Assets\Scripts\Attach_Shield_Script.cs" />
      <Compile Include="Assets\Scripts\BossScript.cs" />
      <Compile Include="Assets\Scripts\BossWeaponScript.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
@@ -148,9 +149,12 @@
      <Compile Include="Assets\Scripts\RendererExtensions.cs" />
      <Compile Include="Assets\Scripts\ScrollingScript.cs" />
      <Compile Include="Assets\Scripts\SettingsScript.cs" />
+     <Compile Include="Assets\Scripts\Shield_Powerup_Script.cs" />
      <Compile Include="Assets\Scripts\ShotScript.cs" />
      <Compile Include="Assets\Scripts\SoundEffectsHelper.cs" />
      <Compile Include="Assets\Scripts\SpecialEffectsHelper.cs" />
+     <Compile Include="Assets\Scripts\Speed_Powerup_Script.cs" />
+     <Compile Include="Assets\Scripts\TimeScript.cs" />
      <Compile Include="Assets\Scripts\WeaponScript.cs" />
      <Compile Include="Assets\Scripts\WinningScript.cs" />
      <Compile Include="Assets\Test_Scripts\CyNetwork.cs" />

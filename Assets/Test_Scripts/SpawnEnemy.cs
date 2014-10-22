@@ -41,7 +41,7 @@ public class SpawnEnemy : Photon.MonoBehaviour {
 		if(PhotonNetwork.playerName.ToLower() == "windows")
 		{
 			if(canSpawn)
-				spawn = Random.Range (0, 100);
+				spawn = Random.Range (0, 150);
 			else
 				spawn = 0;
 			if(spawn == 1)

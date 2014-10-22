@@ -91,7 +91,7 @@ public class InGameScript : Photon.MonoBehaviour
 	public void OnGUI()
 	{
 		//GUI.Box(new Rect(0, Screen.height-25, 150, 25), "");
-		GUILayout.BeginArea(new Rect(0, Screen.height-25, 300, 25));
+		GUILayout.BeginArea(new Rect(0, Screen.height-75, 150, 25));
 		GUILayout.BeginHorizontal ();
 		if (GUILayout.Button("Return to Lobby"))
 		{

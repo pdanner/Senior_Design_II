@@ -7,6 +7,13 @@ public class HealthScript : Photon.MonoBehaviour {
 
 	public bool isEnemy = true;
 
+	public Transform shield_powerup; // TG
+	public Transform speed_powerup;
+	public int range;
+	public int activateShield = 0; // TG
+
+	public static int multiplier = 1;
+
 	public void Damage(int damageCount)
 	{
 		hp -= damageCount;
@@ -35,9 +42,20 @@ public class HealthScript : Photon.MonoBehaviour {
 			//Enemy or Boss
 			SpecialEffectsHelper.Instance.Explosion(transform.position);
 			SoundEffectsHelper.Instance.MakeExplosionSound();
+
+			range = Random.Range(1,30); // TG
+
 			//Windows spawned the Enemies, so they have to destroy them
-			if(PhotonNetwork.player.name.ToLower() == "windows")	
+			if(PhotonNetwork.player.name.ToLower() == "windows")
+			{
+				if(range == 1){
+					PhotonNetwork.Instantiate(shield_powerup.name, transform.position, Quaternion.identity, 0);
+				}
+				else if(range == 2){
+					PhotonNetwork.Instantiate(speed_powerup.name, transform.position, Quaternion.identity, 0);
+				}
 				PhotonNetwork.Destroy(gameObject);
+			}
 		}
 	}
 	
@@ -56,7 +74,7 @@ public class HealthScript : Photon.MonoBehaviour {
 					//Debug.Log(shot.parent.name);
 					Damage(shot.damage);
 
-					shot.parent.AddScore(1); //SCORE_MOD
+					shot.parent.AddScore(1 * multiplier); //SCORE_MOD
 					// Destroy the shot
 					Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
 				}
@@ -74,13 +92,18 @@ public class HealthScript : Photon.MonoBehaviour {
 				}
 			}
 
-			// Avoid friendly fire
-//			if (shot.isEnemyShot != isEnemy)
-//			{
-//				Damage(shot.damage);
-//				
-//				// Destroy the shot
-//				Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
-//			}
+		}
+	}
+
+	void Update() //TG
+	{
+		//600 = 10 seconds
+		if (activateShield > 0) {
+			hp = 100;
+			activateShield--;
+			if(activateShield == 0){
+				this.hp = 4; // TODO: Fix players HP that they return to
+			}
+		}
+	} // TG
 }
-	}}

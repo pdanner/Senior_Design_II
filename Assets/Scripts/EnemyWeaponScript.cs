@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyWeaponScript : MonoBehaviour
+public class EnemyWeaponScript : Photon.MonoBehaviour
 {
 	public Transform shotPrefab;
 	

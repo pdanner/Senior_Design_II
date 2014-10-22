@@ -8,6 +8,9 @@ public class PlayerScript : Photon.MonoBehaviour {
 	public int ammo = 12;
 	private int frameCount = 0;
 
+	public int moveSpeed = 10; // TG
+	public int activateSpeed = 0;
+
 	public static bool start = false;
 
 	void Update () {
@@ -24,7 +27,13 @@ public class PlayerScript : Photon.MonoBehaviour {
 					dir.Normalize ();
 				}
 				
-				dir *= Time.deltaTime*10;
+				if(activateSpeed > 0){ // TG
+					dir *= Time.deltaTime*moveSpeed;
+					activateSpeed--;
+				}
+				else{
+					dir *= Time.deltaTime*10;
+				} // TG
 				
 				transform.Translate (dir);
 				

@@ -94,23 +94,28 @@ public class TestMenu : MonoBehaviour
 			
 			return;
 		}
-		if (GUI.Button(	new Rect(2*(Screen.width / 3) - (100), (Screen.height * 2/5), 250,125), "Start"))
+		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), "Start"))
 		{
 			// Create Room
 			PhotonNetwork.playerName = "Guest" + Random.Range(1, 9999);
 			PhotonNetwork.CreateRoom(this.roomName, new RoomOptions() { maxPlayers = 10 }, null);
 		}
-		if (GUI.Button(	new Rect(2*(Screen.width / 3) - (100), (Screen.height * 3/5), 250,125), "Join"))
+		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 3/5), 250,125), "Join"))
 		{
 			// Join Room
 			PhotonNetwork.playerName = "Guest" + Random.Range(1, 9999);
 			PhotonNetwork.JoinRoom(this.roomName);
 		}
-		if (GUI.Button(	new Rect(2*(Screen.width / 3) - (100), (Screen.height * 4/5), 250,125), "High \nScores"))
+		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 4/5), 250,125), "High \nScores"))
 		{
 			// Scores
 			PhotonNetwork.playerName = "windows";
 			PhotonNetwork.CreateRoom(this.roomName, new RoomOptions() { maxPlayers = 10 }, null);
+		}
+		if (GUI.Button(	new Rect(4*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), "Exit"))
+		{
+			// Create Room
+			Application.Quit();
 		}
 		//GUI.skin.box.fontStyle = FontStyle.Bold;
 		//GUI.Box(new Rect((Screen.width) / 2, (Screen.height - 100) / 2, 400, 300), "Join or Create a Room");
