@@ -54,7 +54,14 @@ public class MoveScript : MonoBehaviour {
 			}
 			else
 			{
-				direction = new Vector2(0.1f, 0.0f);
+				if(bossCount%180 <= 90)
+				{
+					direction = new Vector2(0.001f, -0.5f);
+				}
+				else if(bossCount%180 > 90)
+				{
+					direction = new Vector2(0.001f, 0.5f);
+				}
 				movement = new Vector3(speed.x * direction.x, speed.y * direction.y, 0);
 			}
 		}

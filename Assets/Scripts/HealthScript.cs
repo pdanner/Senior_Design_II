@@ -14,6 +14,8 @@ public class HealthScript : Photon.MonoBehaviour {
 
 	public static int multiplier = 1;
 
+	private int finalScore = 0;
+
 	public void Damage(int damageCount)
 	{
 		hp -= damageCount;
@@ -34,12 +36,19 @@ public class HealthScript : Photon.MonoBehaviour {
 			//Each player will PhotonNetwork.Destroy their own GO
 			if(this.photonView.isMine)
 			{
+				PlayerScript.start = false;
+				finalScore = PhotonNetwork.player.GetScore();
+				var scoreGameObject = GameObject.Find ("ScoreObject");
+				ScoreScript ss = scoreGameObject.GetComponent<ScoreScript>();
+				ss.setPlayerScore(35);
 				PhotonNetwork.Destroy(gameObject);
+				//PhotonNetwork.LeaveRoom();
+				Application.LoadLevel ("GameOver");
 			}
 		}
-		else
+		else if(gameObject.name.Contains("enemy"))
 		{
-			//Enemy or Boss
+			//Enemy
 			SpecialEffectsHelper.Instance.Explosion(transform.position);
 			SoundEffectsHelper.Instance.MakeExplosionSound();
 
@@ -55,6 +64,17 @@ public class HealthScript : Photon.MonoBehaviour {
 					PhotonNetwork.Instantiate(speed_powerup.name, transform.position, Quaternion.identity, 0);
 				}
 				PhotonNetwork.Destroy(gameObject);
+			}
+		}
+		else if (gameObject.name.Contains ("boss"))
+		{
+			//Time.timeScale = 0.3f; //Slow mo finish
+			SpecialEffectsHelper.Instance.Explosion(transform.position);
+			SoundEffectsHelper.Instance.MakeExplosionSound();
+			if(PhotonNetwork.player.name.ToLower() == "windows")
+			{
+				PhotonNetwork.DestroyAll();
+				PhotonNetwork.LoadLevel("GameOver");
 			}
 		}
 	}

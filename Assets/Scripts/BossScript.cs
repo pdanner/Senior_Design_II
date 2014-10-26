@@ -50,7 +50,7 @@ public class BossScript : MonoBehaviour
 			// Auto-fire
 			foreach (BossWeaponScript weapon in weapons)
 			{
-				if (weapon != null && weapon.enabled && (weapon.CanAttack || weapon.CanAttack2 || weapon.CanAttack3))
+				if (weapon != null && weapon.enabled && (weapon.CanAttack || weapon.CanAttack2/* || weapon.CanAttack3*/))
 				{
 					weapon.Attack(true);
 					SoundEffectsHelper.Instance.MakeEnemyShotSound();
@@ -87,6 +87,6 @@ public class BossScript : MonoBehaviour
 		// Game Over.
 		// Add the script to the parent because the current game
 		// object is likely going to be destroyed immediately.
-		transform.parent.gameObject.AddComponent<WinningScript>();
+		//transform.parent.gameObject.AddComponent<WinningScript>();
 	}
 }

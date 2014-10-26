@@ -15,6 +15,7 @@ public class GameStartScript : Photon.MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		count = 0;
+		start = false;
 	}
 	
 	// Update is called once per frame

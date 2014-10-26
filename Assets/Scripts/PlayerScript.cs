@@ -13,6 +13,11 @@ public class PlayerScript : Photon.MonoBehaviour {
 
 	public static bool start = false;
 
+	void Awake()
+	{
+		start = false;
+	}
+
 	void Update () {
 		if(start)
 		{

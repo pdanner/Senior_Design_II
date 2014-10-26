@@ -1,47 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameOverScript : MonoBehaviour {
-	
+public class GameOverScript : Photon.MonoBehaviour {
+
+	private GUISkin skin;
+
+	void Awake()
+	{
+		skin = Resources.Load ("GUISkin") as GUISkin;
+	}
 	void OnGUI()
 	{
-		const int buttonWidth = 120;
-		const int buttonHeight = 60;
-		
-		int playerScore = PhotonNetwork.player.GetScore ();
-		
-		if (
-			GUI.Button(
-			// Center in X, 1/3 of the height in Y
-			new Rect(
-			Screen.width / 2 - (buttonWidth / 2),
-			(1 * Screen.height / 3) - (buttonHeight / 2),
-			buttonWidth,
-			buttonHeight
-			),
-			playerScore.ToString()
-			)
-			)
+		GUI.skin = skin;
+
+		var scoreGameObject = GameObject.Find ("Scripts");
+		ScoreScript ss = scoreGameObject.GetComponent<ScoreScript>();
+
+		GUI.Label(new Rect(3 * Screen.width/5 - 50, 2 * Screen.height/5, 400, 100), "S c o r e : " + PhotonNetwork.player.GetScore());
+
+		if(GUI.Button (new Rect(3 * Screen.width/5, 3 * Screen.height/5, 250, 125), "Main\nMenu"))
 		{
-			// Reload the level
-			//Application.LoadLevel("Stage1");
-		}
-		
-		if (
-			GUI.Button(
-			// Center in X, 2/3 of the height in Y
-			new Rect(
-			Screen.width / 2 - (buttonWidth / 2),
-			(2 * Screen.height / 3) - (buttonHeight / 2),
-			buttonWidth,
-			buttonHeight
-			),
-			"Back to menu"
-			)
-			)
-		{
-			// Reload the level
-			Application.LoadLevel("Menu");
+			if(PhotonNetwork.connected)
+			{
+				PhotonNetwork.LeaveRoom();
+				Application.LoadLevel ("Menu");
+				Destroy(this.gameObject);
+			}
+			else
+			{
+				Application.LoadLevel ("Menu");
+				Destroy(this.gameObject);
+			}
 		}
 	}
 }

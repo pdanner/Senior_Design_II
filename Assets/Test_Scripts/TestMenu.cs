@@ -43,7 +43,7 @@ public class TestMenu : MonoBehaviour
 	public void Awake()
 	{
 
-		skin = Resources.Load ("GUISkin") as GUISkin;
+		skin = Resources.Load ("GUISkin2") as GUISkin;
 		// this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
 		PhotonNetwork.automaticallySyncScene = true;
 		
@@ -94,7 +94,7 @@ public class TestMenu : MonoBehaviour
 			
 			return;
 		}
-		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), "Start"))
+		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), "Host"))
 		{
 			// Create Room
 			PhotonNetwork.playerName = "Guest" + Random.Range(1, 9999);
@@ -106,13 +106,13 @@ public class TestMenu : MonoBehaviour
 			PhotonNetwork.playerName = "Guest" + Random.Range(1, 9999);
 			PhotonNetwork.JoinRoom(this.roomName);
 		}
-		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 4/5), 250,125), "High \nScores"))
+		if (GUI.Button(	new Rect(4*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), "Host\nWindows"))
 		{
 			// Scores
 			PhotonNetwork.playerName = "windows";
 			PhotonNetwork.CreateRoom(this.roomName, new RoomOptions() { maxPlayers = 10 }, null);
 		}
-		if (GUI.Button(	new Rect(4*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), "Exit"))
+		if (GUI.Button(	new Rect(4*(Screen.width / 5) - (100), (Screen.height * 3/5), 250,125), "Exit"))
 		{
 			// Create Room
 			Application.Quit();
