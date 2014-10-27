@@ -99,10 +99,11 @@ public class InGameScript : Photon.MonoBehaviour
 		}
 		GUILayout.EndHorizontal ();
 		GUILayout.EndArea ();
-		GUILayout.BeginArea (new Rect ((Screen.width / 2)-150, (Screen.height / 2), 300, 150));
+		//GUILayout.BeginArea (new Rect ((Screen.width / 2)-150, (Screen.height / 2), 300, 150));
+		GUI.skin  = Resources.Load ("GUISkin") as GUISkin;
 		if(showStartGame && PhotonNetwork.player.name.ToLower() == "windows")
 		{
-			if(GUILayout.Button ("Start Game"))
+			if(GUI.Button (new Rect(Screen.width/2 - 125, Screen.height/2 - (125/2), 250, 125), "Start\nGame"))
 			{
 				showStartGame = false;
 				this.photonView.RPC ("startGame", PhotonTargets.All, null);
@@ -110,7 +111,7 @@ public class InGameScript : Photon.MonoBehaviour
 				song.Play();
 			}
 		}
-		GUILayout.EndArea ();
+		//GUILayout.EndArea ();
 	}
 
 	[RPC] void startGame()

@@ -37,10 +37,6 @@ public class HealthScript : Photon.MonoBehaviour {
 			if(this.photonView.isMine)
 			{
 				PlayerScript.start = false;
-				finalScore = PhotonNetwork.player.GetScore();
-				var scoreGameObject = GameObject.Find ("ScoreObject");
-				ScoreScript ss = scoreGameObject.GetComponent<ScoreScript>();
-				ss.setPlayerScore(35);
 				PhotonNetwork.Destroy(gameObject);
 				//PhotonNetwork.LeaveRoom();
 				Application.LoadLevel ("GameOver");
@@ -74,7 +70,7 @@ public class HealthScript : Photon.MonoBehaviour {
 			if(PhotonNetwork.player.name.ToLower() == "windows")
 			{
 				PhotonNetwork.DestroyAll();
-				PhotonNetwork.LoadLevel("GameOver");
+				PhotonNetwork.LoadLevel("GameWin");
 			}
 		}
 	}

@@ -66,6 +66,7 @@ public class TestMenu : MonoBehaviour
 	
 	public void OnGUI()
 	{
+		skin = Resources.Load ("GUISkinHost") as GUISkin;
 		GUI.skin = skin;
 		GameStartScript.start = false;
 		if (!PhotonNetwork.connected)
@@ -94,25 +95,31 @@ public class TestMenu : MonoBehaviour
 			
 			return;
 		}
-		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), "Host"))
+		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), ""))
 		{
 			// Create Room
 			PhotonNetwork.playerName = "Guest" + Random.Range(1, 9999);
 			PhotonNetwork.CreateRoom(this.roomName, new RoomOptions() { maxPlayers = 10 }, null);
 		}
-		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 3/5), 250,125), "Join"))
+		skin = Resources.Load ("GUISkinJoin") as GUISkin;
+		GUI.skin = skin;
+		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 3/5), 250,125), ""))
 		{
 			// Join Room
 			PhotonNetwork.playerName = "Guest" + Random.Range(1, 9999);
 			PhotonNetwork.JoinRoom(this.roomName);
 		}
-		if (GUI.Button(	new Rect(4*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), "Host\nWindows"))
+		skin = Resources.Load ("GUISkinWin") as GUISkin;
+		GUI.skin = skin;
+		if (GUI.Button(	new Rect(4*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), ""))
 		{
 			// Scores
 			PhotonNetwork.playerName = "windows";
 			PhotonNetwork.CreateRoom(this.roomName, new RoomOptions() { maxPlayers = 10 }, null);
 		}
-		if (GUI.Button(	new Rect(4*(Screen.width / 5) - (100), (Screen.height * 3/5), 250,125), "Exit"))
+		skin = Resources.Load ("GUISkinExit") as GUISkin;
+		GUI.skin = skin;
+		if (GUI.Button(	new Rect(4*(Screen.width / 5) - (100), (Screen.height * 3/5), 250,125), ""))
 		{
 			// Create Room
 			Application.Quit();
