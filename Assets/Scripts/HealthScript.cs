@@ -90,7 +90,9 @@ public class HealthScript : Photon.MonoBehaviour {
 					//Debug.Log(shot.parent.name);
 					Damage(shot.damage);
 
+					//if(this.photonView.isMine)
 					shot.parent.AddScore(1 * multiplier); //SCORE_MOD
+
 					// Destroy the shot
 					Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
 				}

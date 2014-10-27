@@ -21,6 +21,10 @@ public class TestMenu : MonoBehaviour
 	public static readonly string SceneNameGame = "Battleground";
 
 	private GUISkin skin;
+
+	public AudioSource song;
+
+	public bool isWindows = false;
 	
 	private string errorDialog;
 	private double timeToClearDialog;
@@ -53,13 +57,19 @@ public class TestMenu : MonoBehaviour
 			// Connect to the photon master-server. We use the settings saved in PhotonServerSettings (a .asset file in this project)
 			PhotonNetwork.ConnectUsingSettings("0.9");
 		}
-		
-		// generate a name for this player, if none is assigned yet
-		if (String.IsNullOrEmpty(PhotonNetwork.playerName))
+		if(isWindows)
+		{
+			PhotonNetwork.playerName = "windows";
+		}
+		else
 		{
 			PhotonNetwork.playerName = "Guest" + Random.Range(1, 9999);
 		}
-		
+		if(PhotonNetwork.playerName.ToLower().Equals ("windows"))
+		{
+			song.loop = true;
+			song.Play();
+		}
 		// if you wanted more debug out, turn this on:
 		// PhotonNetwork.logLevel = NetworkLogLevel.Full;
 	}
@@ -113,15 +123,22 @@ public class TestMenu : MonoBehaviour
 		GUI.skin = skin;
 		if (GUI.Button(	new Rect(4*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), ""))
 		{
-			// Scores
+			// Host Windows
 			PhotonNetwork.playerName = "windows";
 			PhotonNetwork.CreateRoom(this.roomName, new RoomOptions() { maxPlayers = 10 }, null);
 		}
-		skin = Resources.Load ("GUISkinExit") as GUISkin;
+		skin = Resources.Load ("GUISkinAbout") as GUISkin;
 		GUI.skin = skin;
 		if (GUI.Button(	new Rect(4*(Screen.width / 5) - (100), (Screen.height * 3/5), 250,125), ""))
 		{
-			// Create Room
+			// About the Team
+			Application.LoadLevel ("About");
+		}
+		skin = Resources.Load ("GUISkinExit") as GUISkin;
+		GUI.skin = skin;
+		if (GUI.Button(	new Rect(3.5f *(Screen.width / 5) - (100), (Screen.height * 4/5), 250, 125), ""))
+		{
+			// Quit
 			Application.Quit();
 		}
 		//GUI.skin.box.fontStyle = FontStyle.Bold;

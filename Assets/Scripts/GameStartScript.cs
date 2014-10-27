@@ -30,7 +30,7 @@ public class GameStartScript : Photon.MonoBehaviour {
 					threePrefab.renderer.enabled = true;
 					twoPrefab.renderer.enabled = false;
 					onePrefab.renderer.enabled = false;
-					float size = 10 - count/6f + 6f;
+					float size = 10 - count/6f + 3f;
 					threePrefab.transform.localScale = new Vector3(size, size, 0);
 				}
 				else if(count < 120)
@@ -38,7 +38,7 @@ public class GameStartScript : Photon.MonoBehaviour {
 					threePrefab.renderer.enabled = false;
 					twoPrefab.renderer.enabled = true;
 					onePrefab.renderer.enabled = false;
-					float size = 10 - (count%60)/6f + 6f;
+					float size = 10 - (count%60)/6f + 3f;
 					twoPrefab.transform.localScale = new Vector3(size, size, 0);
 				}
 				else if(count < 180)
@@ -46,7 +46,7 @@ public class GameStartScript : Photon.MonoBehaviour {
 					threePrefab.renderer.enabled = false;
 					twoPrefab.renderer.enabled = false;
 					onePrefab.renderer.enabled = true;
-					float size = 10 - (count%60)/6f + 6f;
+					float size = 10 - (count%60)/6f + 3f;
 					onePrefab.transform.localScale = new Vector3(size, size, 0);
 				}
 				count++;

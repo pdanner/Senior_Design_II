@@ -6,23 +6,32 @@ public class TimeScript : Photon.MonoBehaviour {
 	private float currentTime;
 	
 	public PhotonPlayer parent; //SCORE_MOD
+
+	private float startTime;
 	
 	// Use this for initialization
 	void Start () {
-		
+		startTime = Time.time;
 	}
 	
 	void Update()
 	{
+		//Game is running
 		if (PlayerScript.start == true) 
 		{
 			currentTime = Time.time;
 		}
-		if (currentTime <= 20) 
+		//Game is not running
+		//Keep track of time until we need to start counting again
+		else
+		{
+			startTime = Time.time;
+		}
+		if (currentTime - startTime <= 20f) 
 		{
 			HealthScript.multiplier = 1;
 		}
-		else if (currentTime <= 40) 
+		else if (currentTime - startTime <= 40f) 
 		{
 			HealthScript.multiplier = 2;
 		}
