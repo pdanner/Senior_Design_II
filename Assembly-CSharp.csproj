@@ -145,6 +145,7 @@
      <Compile Include="Assets\Scripts\HighScoreScript.cs" />
      <Compile Include="Assets\Scripts\InGamePlayer.cs" />
      <Compile Include="Assets\Scripts\MoveScript.cs" />
+     <Compile Include="Assets\Scripts\PickPlayerScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\RecycleObjectScript.cs" />
      <Compile Include="Assets\Scripts\RendererExtensions.cs" />

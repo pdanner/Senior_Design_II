@@ -115,9 +115,8 @@ public class TestMenu : MonoBehaviour
 		GUI.skin = skin;
 		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 3/5), 250,125), ""))
 		{
-			// Join Room
-			PhotonNetwork.playerName = "Guest" + Random.Range(1, 9999);
-			PhotonNetwork.JoinRoom(this.roomName);
+			// Load Pick A Player Screen
+			Application.LoadLevel("PickAPlayer");
 		}
 		skin = Resources.Load ("GUISkinWin") as GUISkin;
 		GUI.skin = skin;
