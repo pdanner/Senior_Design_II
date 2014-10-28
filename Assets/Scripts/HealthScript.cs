@@ -16,6 +16,8 @@ public class HealthScript : Photon.MonoBehaviour {
 
 	private int finalScore = 0;
 
+	public static int numAlive = 0;
+
 	public void Damage(int damageCount)
 	{
 		hp -= damageCount;
@@ -23,6 +25,16 @@ public class HealthScript : Photon.MonoBehaviour {
 		if (hp <= 0)
 		{
 			photonView.RPC ("destroyObject", PhotonTargets.All, null);
+		}
+	}
+
+	[RPC] void removePlayer()
+	{
+		numAlive--;
+		if(numAlive == 0)
+		{
+			PhotonNetwork.DestroyAll();
+			PhotonNetwork.LoadLevel("GameOver");
 		}
 	}
 
@@ -39,6 +51,7 @@ public class HealthScript : Photon.MonoBehaviour {
 				PlayerScript.start = false;
 				PhotonNetwork.Destroy(gameObject);
 				//PhotonNetwork.LeaveRoom();
+				photonView.RPC ("removePlayer", PhotonTargets.MasterClient, null);
 				Application.LoadLevel ("GameOver");
 			}
 		}
@@ -93,8 +106,8 @@ public class HealthScript : Photon.MonoBehaviour {
 					//if(this.photonView.isMine)
 					shot.parent.AddScore(1 * multiplier); //SCORE_MOD
 
-					// Destroy the shot
-					Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
+					// Destroy the shot if it is mine
+					PhotonNetwork.Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
 				}
 			}
 			// Enemy Shot

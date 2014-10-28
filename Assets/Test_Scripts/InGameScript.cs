@@ -41,6 +41,11 @@ public class InGameScript : Photon.MonoBehaviour
 		else if(playerTaken == 4) player4Taken = false;
 	}
 
+	[RPC] void addPlayer()
+	{
+		HealthScript.numAlive++;
+	}
+
 	public void Awake()
 	{
 		// in case we started this demo with the wrong scene being active, simply load the menu scene
@@ -57,21 +62,25 @@ public class InGameScript : Photon.MonoBehaviour
 			{
 				PhotonNetwork.Instantiate(this.playerPrefab1.name,  
 				                         new Vector3(-10f, 5f, 0f), Quaternion.identity, 0);
+				photonView.RPC("addPlayer", PhotonTargets.MasterClient, null);
 			}
 			else if(PhotonNetwork.playerName.ToLower().Equals ("player2"))
 			{
 				PhotonNetwork.Instantiate(this.playerPrefab2.name, transform.position + 
 				                          new Vector3(-10f, 2f, 0f), Quaternion.identity, 0);
+				photonView.RPC("addPlayer", PhotonTargets.MasterClient, null);
 			}
 			else if(PhotonNetwork.playerName.ToLower().Equals ("player3"))
 			{
 				PhotonNetwork.Instantiate(this.playerPrefab3.name, transform.position + 
 				                          new Vector3(-10f, -2f, 0f), Quaternion.identity, 0);
+				photonView.RPC("addPlayer", PhotonTargets.MasterClient, null);
 			}
 			else if(PhotonNetwork.playerName.ToLower().Equals ("player4"))
 			{
 				PhotonNetwork.Instantiate(this.playerPrefab4.name, transform.position + 
 				                          new Vector3(-10f, -5f, 0f), Quaternion.identity, 0);
+				photonView.RPC("addPlayer", PhotonTargets.MasterClient, null);
 			}
 		}
 	}

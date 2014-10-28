@@ -28,8 +28,10 @@ public class WeaponScript : Photon.MonoBehaviour
 	[RPC]
 	void FireOneShot()
 	{
-		GameObject shotTransform = Instantiate (Resources.Load("Shot"), transform.position + new Vector3(3f, -0.3f, 0), 
-		                                        transform.rotation) as GameObject;
+//		GameObject shotTransform = Instantiate (Resources.Load("Shot"), transform.position + new Vector3(3f, -0.3f, 0), 
+//		                                        transform.rotation) as GameObject;
+		GameObject shotTransform = PhotonNetwork.Instantiate ("Shot", transform.position + new Vector3(3f, -0.3f, 0), 
+		                                        transform.rotation, 0) as GameObject;
 		//shotTransform.position = transform.position + new Vector3(4f, -0.3f, 0);
 		ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
 		if (shot != null)
@@ -49,7 +51,22 @@ public class WeaponScript : Photon.MonoBehaviour
 		if (CanAttack)
 		{
 			shootCooldown = shootingRate;
-			this.photonView.RPC ("FireOneShot", PhotonTargets.All, null);
+			//this.photonView.RPC ("FireOneShot", PhotonTargets.All, null);
+			GameObject shotTransform = PhotonNetwork.Instantiate ("Shot", transform.position + new Vector3(3f, -0.3f, 0), 
+			                                                      transform.rotation, 0) as GameObject;
+			//shotTransform.position = transform.position + new Vector3(4f, -0.3f, 0);
+			ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
+			if (shot != null)
+			{
+				shot.parent = this.parent; //SCORE_MOD
+				shot.isEnemyShot = false; //	isEnemy;
+			}
+			
+			MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
+			if (move != null)
+			{
+				move.direction = this.transform.right; 
+			}
 		}
 	}
 

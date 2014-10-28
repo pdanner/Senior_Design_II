@@ -115,7 +115,7 @@ public class TestMenu : MonoBehaviour
 		GUI.skin = skin;
 		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 3/5), 250,125), ""))
 		{
-			// Load Pick A Player Screen
+			// Load Pick A Player Screen 
 			Application.LoadLevel("PickAPlayer");
 		}
 		skin = Resources.Load ("GUISkinWin") as GUISkin;
