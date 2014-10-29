@@ -15,7 +15,7 @@ Platform assembly: C:\Users\Owner\Documents\GitHub\Senior_Design_II\cyris_Data\M
 Loading C:\Users\Owner\Documents\GitHub\Senior_Design_II\cyris_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
 Platform assembly: C:\Users\Owner\Documents\GitHub\Senior_Design_II\cyris_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Owner\Documents\GitHub\Senior_Design_II\cyris_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-- Completed reload, in  0.185 seconds
+- Completed reload, in  0.145 seconds
 desktop: 1366x768 59Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.

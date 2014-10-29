@@ -48,7 +48,7 @@ public class SpawnEnemy : Photon.MonoBehaviour {
 		}
 		if(PhotonNetwork.playerName.ToLower() == "windows")
 		{
-			if(timer < 5*60) // 30 seconds
+			if(timer < 16*60) // 30 seconds
 			{
 				if(canSpawn)
 					spawn = Random.Range (0, 150);
@@ -64,11 +64,11 @@ public class SpawnEnemy : Photon.MonoBehaviour {
 					                                                       transform.rotation, 0) as GameObject;
 				}
 			}
-			else if(timer > 7*60)
+			else if(timer > 20*60)
 			{
 				if(!spawnedBoss && canSpawn)
 				{
-					float spawnX = rightBorder;
+					float spawnX = rightBorder + 5f;
 					GameObject bossTransform = PhotonNetwork.Instantiate (bossPrefab.name, new Vector3(spawnX, 0f, 0f), 
 					                                                      transform.rotation, 0) as GameObject;
 					spawnedBoss = true;
