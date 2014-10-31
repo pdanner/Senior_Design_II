@@ -60,6 +60,7 @@ public class TestMenu : MonoBehaviour
 		if(isWindows)
 		{
 			PhotonNetwork.playerName = "windows";
+			PhotonNetwork.player.name = "windows";
 		}
 		else
 		{
@@ -105,12 +106,14 @@ public class TestMenu : MonoBehaviour
 			
 			return;
 		}
-		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), ""))
-		{
-			// Create Room
-			PhotonNetwork.playerName = "Guest" + Random.Range(1, 9999);
-			PhotonNetwork.CreateRoom(this.roomName, new RoomOptions() { maxPlayers = 10 }, null);
-		}
+//		skin = Resources.Load ("GUISkinHost") as GUISkin;
+//		GUI.skin = skin;
+//		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), ""))
+//		{
+//			// Host not widnows
+//			PhotonNetwork.playerName = "Guest" + Random.Range(1, 9999);
+//			PhotonNetwork.CreateRoom(this.roomName, new RoomOptions() { maxPlayers = 10 }, null);
+//		}
 		skin = Resources.Load ("GUISkinJoin") as GUISkin;
 		GUI.skin = skin;
 		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 3/5), 250,125), ""))
@@ -120,22 +123,23 @@ public class TestMenu : MonoBehaviour
 		}
 		skin = Resources.Load ("GUISkinWin") as GUISkin;
 		GUI.skin = skin;
-		if (GUI.Button(	new Rect(4*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), ""))
+		if (GUI.Button(	new Rect(3*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), ""))
 		{
 			// Host Windows
 			PhotonNetwork.playerName = "windows";
+			PhotonNetwork.player.name = "windows";
 			PhotonNetwork.CreateRoom(this.roomName, new RoomOptions() { maxPlayers = 10 }, null);
 		}
 		skin = Resources.Load ("GUISkinAbout") as GUISkin;
 		GUI.skin = skin;
-		if (GUI.Button(	new Rect(4*(Screen.width / 5) - (100), (Screen.height * 3/5), 250,125), ""))
+		if (GUI.Button(	new Rect(4*(Screen.width / 5) - (100), (Screen.height * 2/5), 250,125), ""))
 		{
 			// About the Team
 			Application.LoadLevel ("About");
 		}
 		skin = Resources.Load ("GUISkinExit") as GUISkin;
 		GUI.skin = skin;
-		if (GUI.Button(	new Rect(3.5f *(Screen.width / 5) - (100), (Screen.height * 4/5), 250, 125), ""))
+		if (GUI.Button(	new Rect(4f *(Screen.width / 5) - (100), (Screen.height * 3/5), 250, 125), ""))
 		{
 			// Quit
 			Application.Quit();

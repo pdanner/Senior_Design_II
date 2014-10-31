@@ -23,10 +23,6 @@ public class SpawnEnemy : Photon.MonoBehaviour {
 	void Start () {
 		//MoveScript move = enemyPrefab.gameObject.GetComponent<MoveScript> ();
 		//move.enabled = true;
-	}
-	
-	// Update is called once per frame
-	void Update () {
 
 		dist = (transform.position - Camera.main.transform.position).z;
 		
@@ -41,14 +37,19 @@ public class SpawnEnemy : Photon.MonoBehaviour {
 		bottomBorder = Camera.main.ViewportToWorldPoint(
 			new Vector3(0, 1, dist)
 			).y;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
 		if(GameStartScript.count  > 180)
 		{
 			canSpawn = true;
 			timer++;
 		}
-		if(PhotonNetwork.playerName.ToLower() == "windows")
+		if(PhotonNetwork.player.name.ToLower() == "windows")
 		{
-			if(timer < 16*60) // 30 seconds
+			if(timer < 15*60) // 55 seconds
 			{
 				if(canSpawn)
 					spawn = Random.Range (0, 150);
@@ -68,7 +69,7 @@ public class SpawnEnemy : Photon.MonoBehaviour {
 			{
 				if(!spawnedBoss && canSpawn)
 				{
-					float spawnX = rightBorder + 5f;
+					float spawnX = rightBorder + 10f;
 					GameObject bossTransform = PhotonNetwork.Instantiate (bossPrefab.name, new Vector3(spawnX, 0f, 0f), 
 					                                                      transform.rotation, 0) as GameObject;
 					spawnedBoss = true;

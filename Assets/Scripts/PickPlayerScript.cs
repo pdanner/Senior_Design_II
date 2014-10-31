@@ -39,6 +39,12 @@ public class PickPlayerScript : Photon.MonoBehaviour {
 			PhotonNetwork.playerName = "Player4";
 			PhotonNetwork.JoinRoom("myRoom");
 		}
+		skin = Resources.Load ("GUISkin") as GUISkin;
+		GUI.skin = skin;
+		if(GUI.Button (new Rect(Screen.width/2 - 125, 4 * Screen.height/5, 250, 125), "Main\nMenu"))
+		{
+			Application.LoadLevel("Menu");
+		}
 	}
 }
 

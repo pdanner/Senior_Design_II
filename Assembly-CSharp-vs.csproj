@@ -137,6 +137,7 @@
      <Compile Include="Assets\Scripts\BossWeaponScript.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\EnemyWeaponScript.cs" />
+     <Compile Include="Assets\Scripts\Fist_Script.cs" />
      <Compile Include="Assets\Scripts\GameMenuScript.cs" />
      <Compile Include="Assets\Scripts\GameOverScript.cs" />
      <Compile Include="Assets\Scripts\GameStartScript.cs" />
@@ -147,6 +148,7 @@
      <Compile Include="Assets\Scripts\MoveScript.cs" />
      <Compile Include="Assets\Scripts\PickPlayerScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\Punch_Powerup_Script.cs" />
      <Compile Include="Assets\Scripts\RecycleObjectScript.cs" />
      <Compile Include="Assets\Scripts\RendererExtensions.cs" />
      <Compile Include="Assets\Scripts\ScoreTextScript.cs" />

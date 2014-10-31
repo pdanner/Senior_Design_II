@@ -48,7 +48,7 @@ public class MoveScript : MonoBehaviour {
 		else if(moveType.Equals("boss"))
 		{
 			bossCount++;
-			if(bossCount < 60)
+			if(bossCount < 120)
 			{
 				movement = new Vector3 (speed.x * direction.x, speed.y * direction.y, 0);
 			}

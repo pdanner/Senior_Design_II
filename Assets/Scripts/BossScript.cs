@@ -8,6 +8,9 @@ public class BossScript : MonoBehaviour
 	private bool hasSpawn;
 	private MoveScript moveScript;
 	private BossWeaponScript[] weapons;
+	private int spawnCount = 0;
+
+	private bool alreadySeen = false;
 	
 	void Awake()
 	{
@@ -21,22 +24,28 @@ public class BossScript : MonoBehaviour
 	// 1 - Disable everything
 	void Start()
 	{
-		hasSpawn = false;
-		
-		// Disable everything
-		// -- collider
-		collider2D.enabled = false;
-		// -- Moving
-		moveScript.enabled = false;
-		// -- Shooting
-		foreach (BossWeaponScript weapon in weapons)
-		{
-			weapon.enabled = false;
-		}
+		Spawn ();
+//		hasSpawn = false;
+//		
+//		// Disable everything
+//		// -- collider
+//		collider2D.enabled = false;
+//		// -- Moving
+//		moveScript.enabled = false;
+//		// -- Shooting
+//		foreach (BossWeaponScript weapon in weapons)
+//		{
+//			weapon.enabled = false;
+//		}
 	}
 	
 	void Update()
 	{
+		spawnCount++;
+		if(spawnCount > 100)
+			collider2D.enabled = true;
+		else
+			collider2D.enabled = false;
 		// 2 - Check if the enemy has spawned.
 		if (hasSpawn == false)
 		{
@@ -60,7 +69,15 @@ public class BossScript : MonoBehaviour
 			// 4 - Out of the camera ? Destroy the game object.
 			if (renderer.IsVisibleFrom(Camera.main) == false)
 			{
-				Destroy(gameObject);
+				if(alreadySeen && PhotonNetwork.player.name.ToLower() == "windows")
+				{
+					PhotonNetwork.Destroy(gameObject);
+					PhotonNetwork.LoadLevel ("GameWin");
+				}
+			}
+			else
+			{
+				alreadySeen = true;
 			}
 		}
 	}

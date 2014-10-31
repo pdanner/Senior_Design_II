@@ -13,7 +13,8 @@ public class GameOverScript : Photon.MonoBehaviour {
 	{
 		GUI.skin = skin;
 
-		GUI.Label(new Rect(3 * Screen.width/5 - 50, 2 * Screen.height/5, 400, 100), "Score: " + PhotonNetwork.player.GetScore());
+		if(!PhotonNetwork.player.name.ToLower().Equals("windows"))
+			GUI.Label(new Rect(3 * Screen.width/5 - 50, 2 * Screen.height/5, 400, 100), "Score: " + PhotonNetwork.player.GetScore());
 
 		if(GUI.Button (new Rect(3 * Screen.width/5, 3 * Screen.height/5, 250, 125), "Main\nMenu"))
 		{

@@ -9,6 +9,8 @@ public class HealthScript : Photon.MonoBehaviour {
 
 	public Transform shield_powerup; // TG
 	public Transform speed_powerup;
+	public Transform punch_powerup;
+
 	public int range;
 	public int activateShield = 0; // TG
 
@@ -21,6 +23,8 @@ public class HealthScript : Photon.MonoBehaviour {
 	public void Damage(int damageCount)
 	{
 		hp -= damageCount;
+		if(gameObject.name.Contains("boss"))
+			Debug.Log(hp);
 		
 		if (hp <= 0)
 		{
@@ -31,7 +35,7 @@ public class HealthScript : Photon.MonoBehaviour {
 	[RPC] void removePlayer()
 	{
 		numAlive--;
-		if(numAlive == 0)
+		if(numAlive <= 0)
 		{
 			PhotonNetwork.DestroyAll();
 			PhotonNetwork.LoadLevel("GameOver");
@@ -52,7 +56,7 @@ public class HealthScript : Photon.MonoBehaviour {
 				PhotonNetwork.Destroy(gameObject);
 				//PhotonNetwork.LeaveRoom();
 				photonView.RPC ("removePlayer", PhotonTargets.MasterClient, null);
-				Application.LoadLevel ("GameOver");
+				//Application.LoadLevel ("GameOver");
 			}
 		}
 		else if(gameObject.name.Contains("enemy"))
@@ -64,7 +68,7 @@ public class HealthScript : Photon.MonoBehaviour {
 			range = Random.Range(1,30); // TG
 
 			//Windows spawned the Enemies, so they have to destroy them
-			if(PhotonNetwork.player.name.ToLower() == "windows")
+			if(PhotonNetwork.player.name.ToLower().Equals("windows"))
 			{
 				if(range == 1){
 					PhotonNetwork.Instantiate(shield_powerup.name, transform.position, Quaternion.identity, 0);
@@ -72,11 +76,15 @@ public class HealthScript : Photon.MonoBehaviour {
 				else if(range == 2){
 					PhotonNetwork.Instantiate(speed_powerup.name, transform.position, Quaternion.identity, 0);
 				}
+				else if(range == 3){
+					PhotonNetwork.Instantiate(punch_powerup.name, transform.position, Quaternion.identity, 0);
+				}
 				PhotonNetwork.Destroy(gameObject);
 			}
 		}
 		else if (gameObject.name.Contains ("boss"))
 		{
+			//Boss
 			//Time.timeScale = 0.3f; //Slow mo finish
 			SpecialEffectsHelper.Instance.Explosion(transform.position);
 			SoundEffectsHelper.Instance.MakeExplosionSound();
@@ -100,11 +108,13 @@ public class HealthScript : Photon.MonoBehaviour {
 				// Shooting Enemy
 				if(isEnemy)
 				{
+					shot.isEnemyShot = true;
 					//Debug.Log(shot.parent.name);
 					Damage(shot.damage);
 
 					//if(this.photonView.isMine)
 					shot.parent.AddScore(1 * multiplier); //SCORE_MOD
+
 
 					// Destroy the shot if it is mine
 					PhotonNetwork.Destroy(shot.gameObject); // Remember to always target the game object, otherwise you will just remove the script
