@@ -33,13 +33,13 @@ public class InGameScript : Photon.MonoBehaviour
 		else if(playerTaken == 4) player4Taken = true;
 	}
 
-	[RPC] void removePlayer(int playerTaken)
-	{
-		if(playerTaken == 1) player1Taken = false;
-		else if(playerTaken == 2) player2Taken = false;
-		else if(playerTaken == 3) player3Taken = false;
-		else if(playerTaken == 4) player4Taken = false;
-	}
+//	[RPC] void removePlayer(int playerTaken)
+//	{
+//		if(playerTaken == 1) player1Taken = false;
+//		else if(playerTaken == 2) player2Taken = false;
+//		else if(playerTaken == 3) player3Taken = false;
+//		else if(playerTaken == 4) player4Taken = false;
+//	}
 
 	[RPC] void addPlayer()
 	{
@@ -92,6 +92,7 @@ public class InGameScript : Photon.MonoBehaviour
 		GUILayout.BeginHorizontal ();
 		if (GUILayout.Button("Return to Lobby"))
 		{
+			//photonView.RPC("removePlayer", PhotonTargets.MasterClient, null);
 			PhotonNetwork.LeaveRoom();  // we will load the menu level when we successfully left the room
 		}
 		GUILayout.EndHorizontal ();

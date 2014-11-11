@@ -25,8 +25,8 @@ public class Shield_Powerup_Script : Photon.MonoBehaviour {
 		
 			if (playerScript != null) {
 				if(attachScript != null)
-					attachScript.isActive = 300;
-				healthScript.activateShield = 300;
+					attachScript.isActive = 600;
+				healthScript.activateShield = 600;
 				healthScript.hp = 100;
 				PhotonNetwork.Destroy(this.gameObject);
 			}

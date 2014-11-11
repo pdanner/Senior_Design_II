@@ -13,7 +13,7 @@ public class Speed_Powerup_Script : Photon.MonoBehaviour {
 		playerScript = otherCollider.gameObject.GetComponent<PlayerScript> ();
 		if (playerScript != null) {
 			playerScript.moveSpeed = 15;
-			playerScript.activateSpeed = 300;
+			playerScript.activateSpeed = 600;
 			PhotonNetwork.Destroy(this.gameObject);
 		}
 	}
