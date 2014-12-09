@@ -18,8 +18,20 @@ public class GameOverScript : Photon.MonoBehaviour {
 		{
 			if(PhotonNetwork.playerList[i].name.ToLower() != "windows")
 			{
+				string colorName = "";
+				switch(PhotonNetwork.playerList[i].name.ToLower())
+				{
+				case "player1": colorName = "Red";
+					break;
+				case "player2": colorName = "Green";
+					break;
+				case "player3": colorName = "Blue";
+					break;
+				case "player4": colorName = "Yellow";
+					break;
+				}
 				GUI.Label(new Rect(2 * Screen.width/5 - 50, (screenPos+2) * Screen.height/10, 400, 100), 
-				          PhotonNetwork.playerList[i].name + ": " + PhotonNetwork.playerList[i].GetScore());
+				          colorName + ": " + PhotonNetwork.playerList[i].GetScore());
 				screenPos++;
 			}
 

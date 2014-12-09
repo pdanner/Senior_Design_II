@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{E32DA1C3-135E-621A-D72F-1E2DA9B0356C}</ProjectGuid>
+	<ProjectGuid>{2CDAC1E1-866C-C179-F62D-AFCF79DEFE76}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -135,42 +135,39 @@
      <Compile Include="Assets\Scripts\Attach_Shield_Script.cs" />
      <Compile Include="Assets\Scripts\BossScript.cs" />
      <Compile Include="Assets\Scripts\BossWeaponScript.cs" />
+     <Compile Include="Assets\Scripts\CyNetwork.cs" />
      <Compile Include="Assets\Scripts\EnemyHealthScript.cs" />
+     <Compile Include="Assets\Scripts\EnemyNetwork.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\EnemyWeaponScript.cs" />
      <Compile Include="Assets\Scripts\Fist_Script.cs" />
-     <Compile Include="Assets\Scripts\GameMenuScript.cs" />
      <Compile Include="Assets\Scripts\GameOverScript.cs" />
      <Compile Include="Assets\Scripts\GameStartScript.cs" />
+     <Compile Include="Assets\Scripts\GameWinScript.cs" />
      <Compile Include="Assets\Scripts\GuiAmmoScript.cs" />
      <Compile Include="Assets\Scripts\GuiHealthScript.cs" />
      <Compile Include="Assets\Scripts\HealthScript.cs" />
      <Compile Include="Assets\Scripts\HighScoreScript.cs" />
-     <Compile Include="Assets\Scripts\InGamePlayer.cs" />
+     <Compile Include="Assets\Scripts\InGameScript.cs" />
      <Compile Include="Assets\Scripts\MoveScript.cs" />
      <Compile Include="Assets\Scripts\PickPlayerScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\Punch_Powerup_Script.cs" />
      <Compile Include="Assets\Scripts\RecycleObjectScript.cs" />
      <Compile Include="Assets\Scripts\RendererExtensions.cs" />
+     <Compile Include="Assets\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\ScoreTextScript.cs" />
      <Compile Include="Assets\Scripts\ScrollingScript.cs" />
      <Compile Include="Assets\Scripts\SettingsScript.cs" />
      <Compile Include="Assets\Scripts\Shield_Powerup_Script.cs" />
      <Compile Include="Assets\Scripts\ShotScript.cs" />
      <Compile Include="Assets\Scripts\SoundEffectsHelper.cs" />
+     <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
      <Compile Include="Assets\Scripts\SpecialEffectsHelper.cs" />
      <Compile Include="Assets\Scripts\Speed_Powerup_Script.cs" />
+     <Compile Include="Assets\Scripts\TestMenu.cs" />
      <Compile Include="Assets\Scripts\TimeScript.cs" />
      <Compile Include="Assets\Scripts\WeaponScript.cs" />
-     <Compile Include="Assets\Scripts\WinningScript.cs" />
-     <Compile Include="Assets\Test_Scripts\CyNetwork.cs" />
-     <Compile Include="Assets\Test_Scripts\EnemyNetwork.cs" />
-     <Compile Include="Assets\Test_Scripts\GameWinScript.cs" />
-     <Compile Include="Assets\Test_Scripts\InGameScript.cs" />
-     <Compile Include="Assets\Test_Scripts\ScoreScript.cs" />
-     <Compile Include="Assets\Test_Scripts\SpawnEnemy.cs" />
-     <Compile Include="Assets\Test_Scripts\TestMenu.cs" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
